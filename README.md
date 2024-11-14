@@ -11,7 +11,11 @@
     <img src="https://img.shields.io/github/languages/top/jeet-ss/researchAssistant_App?style=default&color=0080ff" alt="repo-top-language">
     <img src="https://img.shields.io/github/languages/count/jeet-ss/researchAssistant_App?style=default&color=0080ff" alt="repo-language-count">
 </p>
-<p align="center"><!-- default option, no dependency badges. -->
+<p align="center">Built with the tools and technologies:</p>
+<p align="center">
+	<img src="https://img.shields.io/badge/Streamlit-FF4B4B.svg?style=flat-square&logo=Streamlit&logoColor=white" alt="Streamlit">
+	<img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat-square&logo=Python&logoColor=white" alt="Python">
+	<img src="https://img.shields.io/badge/Pydantic-E92063.svg?style=flat-square&logo=Pydantic&logoColor=white" alt="Pydantic">
 </p>
 <p align="center">
     <!-- default option, no dependency badges. -->
