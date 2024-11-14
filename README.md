@@ -53,11 +53,11 @@ The researchAssistantApp is an innovative open-source project designed to stream
 ---
 ## Main Idea
 
-- ** 🎯 Purpose**: 
-  - Facilitate comprehensive research on a specific topic from multiple perspectives.
-  - Utilize Interview personas to simulate diverse viewpoints during the research process.
+### ** 🎯 Purpose**: 
+  - **Facilitate comprehensive research** on a specific topic from multiple perspectives.
+  - Utilize **Interview personas** to simulate diverse viewpoints during the research process.
 
-- **User Interaction**:
+- ** User Interaction**:
   - **Selection of Interview Agents**:
     - Users can choose the number of Interview agents to engage for their query.
     - Options range from a single agent to multiple agents, depending on the depth of research desired.
