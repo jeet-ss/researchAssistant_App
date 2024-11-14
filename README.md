@@ -41,10 +41,19 @@
 
 The researchAssistantApp is an innovative open-source project designed to streamline the research process. It serves as a virtual research assistant, capable of conducting interviews, generating questions, and synthesizing information into comprehensive reports. Key features include AI analyst personas, web search capabilities, and a user-friendly interface. This tool is ideal for researchers, students, and professionals seeking efficient and organized data collection and analysis.
 
+
+- **Most Important Features**:
+  - **Multi-Agent architecture using Langchain**:
+    - Multi agents utilized for parallel research implemented using langchain.
+    - Options range from a single agent to multiple agents, depending on the depth of research desired.
+
+
+
+
 ---
 ## Main Idea
 
-- **Purpose**: 
+- ** 🎯 Purpose**: 
   - Facilitate comprehensive research on a specific topic from multiple perspectives.
   - Utilize Interview personas to simulate diverse viewpoints during the research process.
 
@@ -276,7 +285,7 @@ Run researchAssistant_App.git using the following command:
 ##  Contributing
 
 - **💬 [Join the Discussions](https://github.com/jeet-ss/researchAssistant_App.git/discussions)**: Share your insights, provide feedback, or ask questions.
-- **🐛 [Report Issues](https://github.com/jeet-ss/researchAssistant_App.git/issues)**: Submit bugs found or log feature requests for the `researchAssistant_App.git` project.
+- **🐛 [Report Issues](https://github.com/jeet-ss/researchAssistant_App.git/issues)**: Submit bugs found or log feature requests for the `researchAssistant_App` project.
 - **💡 [Submit Pull Requests](https://github.com/jeet-ss/researchAssistant_App.git/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
 
 <details closed>
