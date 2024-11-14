@@ -110,7 +110,7 @@ The researchAssistantApp is an innovative open-source project designed to stream
 - User feedback will be actively sought to **refine and enhance app functionality**.
 
 <p align="center">
-    <img src="https://drive.google.com/file/d/1W4IFFaXMEKPlRejQrOMs4mu5-WcUnGVY/view?usp=sharing" alt="app graph">
+    <img src="https://github.com/jeet-ss/researchAssistant_App/blob/main/resources/researchAssistant_graph.jpeg" alt="app graph">
 </p>
 
 ---
