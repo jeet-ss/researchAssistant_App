@@ -21,8 +21,8 @@
 ##  Table of Contents
 
 - [ Overview](#-overview)
-- [ Features](#-features)
 - [ Main Idea](#-main-idea)
+- [ Features](#-features)
 - [ Project Structure](#-project-structure)
   - [ Project Index](#-project-index)
 - [ Getting Started](#-getting-started)
@@ -42,12 +42,22 @@
 The researchAssistantApp is an innovative open-source project designed to streamline the research process. It serves as a virtual research assistant, capable of conducting interviews, generating questions, and synthesizing information into comprehensive reports. Key features include AI analyst personas, web search capabilities, and a user-friendly interface. This tool is ideal for researchers, students, and professionals seeking efficient and organized data collection and analysis.
 
 
-- **Most Important Features**:
-  - **Multi-Agent architecture using Langchain**:
-    - Multi agents utilized for parallel research implemented using langchain.
-    - Options range from a single agent to multiple agents, depending on the depth of research desired.
+- **🌟 Most Important Features**:
+  
+  - **🌐 Multi-Agent Architecture using LangGraph**:
+    - The app employs a **multi-agent architecture** powered by LangGraph, enabling **parallel research** across various perspectives.
+    - Users can select from a **single agent** to **multiple agents**, allowing for flexibility based on the desired depth and breadth of research.
+    - This architecture enhances the ability to gather **diverse insights simultaneously**, making the research process more efficient and comprehensive.
 
+  - **🔍 Tool Calling for LLM Agents**:
+    - The app includes a **tool calling functionality** that empowers LLM agents to perform **web searches** for the most recent documents and information.
+    - This feature ensures that agents can access **up-to-date resources**, enhancing the quality and relevance of the information gathered.
+    - Additionally, agents can retrieve results from **Wikipedia**, providing a reliable source of general knowledge and context for the research topic.
 
+  - **🔗 Managing LangGraph and Streamlit States**:
+    - Both LangGraph and Streamlit maintain their own **state stores**, which can complicate the integration and management of data between the two systems.
+    - Developing a cohesive solution to synchronize these states is a **non-trivial challenge** that requires careful consideration of data flow and user interactions.
+    - Addressing this issue is crucial for ensuring a **seamless user experience** and maintaining the integrity of the research process.
 
 
 ---
@@ -99,56 +109,9 @@ The researchAssistantApp is an innovative open-source project designed to stream
 - Continuous improvement of **persona generation algorithms** for more nuanced perspectives.
 - User feedback will be actively sought to **refine and enhance app functionality**.
 
-### 🎯 Purpose: 
-  - **Facilitate comprehensive research** on a specific topic from multiple perspectives.
-  - Utilize **Interview personas** to simulate diverse viewpoints during the research process.
-
-- ** User Interaction**:
-  - **Selection of Interview Agents**:
-    - Users can choose the number of Interview agents to engage for their query.
-    - Options range from a single agent to multiple agents, depending on the depth of research desired.
-
-  - **Selection of Interview Rounds**:
-    - Users can choose the max number of rounds to conduct the Interview.
-    - Options range from a single to multiple steps, depending on the depth of research desired.
-  
-  - **Persona Generation**:
-    - The app generates unique personas for each selected agent, reflecting different fields, backgrounds, and expertise.
-    - Users can review and customize the generated personas based on their research needs.
-
-  - **Feedback Mechanism**:
-    - Users can provide feedback to include different interviewers from different fields or backgrounds.
-    - This allows for a more tailored and relevant research experience.
-
-- **Interview Process**:
-  - **Engagement with Expert LLM Agent**:
-    - Once the user is satisfied with the personas, the agents conduct an interview with an expert LLM agent.
-    - The LLM agent has access to web search and Wikipedia search tools to provide accurate and up-to-date information.
-
-  - **Interview Dynamics**:
-    - The interview continues for a predetermined number of turns, as specified by the user at the beginning.
-    - The interview may also conclude earlier if the agents are satisfied with the responses received.
-
-- **Report Compilation**:
-  - **Findings Consolidation**:
-    - After the interviews, the findings from all personas are compiled into a comprehensive report.
-  
-  - **Structured Report Creation**:
-    - Three specialized agents are assigned to write distinct sections of the report:
-      - **Introduction**: Summarizes the research topic and objectives.
-      - **Body**: Presents detailed findings, insights, and perspectives gathered from the interviews.
-      - **Conclusion**: Offers a synthesis of the research findings and potential implications.
-
-- **User Benefits**:
-  - Gain insights from diverse perspectives, enhancing the depth and breadth of research.
-  - Streamlined process for gathering and organizing information efficiently.
-  - Customizable experience tailored to individual research needs and preferences.
-
-- **Future Enhancements**:
-  - Potential integration of additional data sources and research tools.
-  - Continuous improvement of persona generation algorithms for more nuanced perspectives.
-  - User feedback will be actively sought to refine and enhance app functionality.
-
+<p align="center">
+    <img src="https://drive.google.com/file/d/1W4IFFaXMEKPlRejQrOMs4mu5-WcUnGVY/view?usp=sharing" alt="app graph">
+</p>
 
 ---
 ##  Features
