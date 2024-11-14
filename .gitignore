@@ -1,0 +1,16 @@
+/mock_version/
+*.npy
+*.pth
+*.png
+*.pdf
+*.svg
+*.ply
+*.pts
+*.obj
+*.jpg
+*.xml
+*.pickle
+*.env
+*/__pycache__/
+*__pycache__*
+*exp_output*
