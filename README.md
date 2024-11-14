@@ -59,6 +59,7 @@ The researchAssistantApp is an innovative open-source project designed to stream
     - Developing a cohesive solution to synchronize these states is a **non-trivial challenge** that requires careful consideration of data flow and user interactions.
     - Addressing this issue is crucial for ensuring a **seamless user experience** and maintaining the integrity of the research process.
 
+A **demo version** of the app is hosted [here](https://researchassistant-jss.streamlit.app/).
 
 ---
 ## Main Idea
