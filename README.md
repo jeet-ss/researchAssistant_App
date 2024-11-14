@@ -51,7 +51,6 @@ The researchAssistantApp.git is an innovative open-source project designed to st
 | 📄 | **Documentation** | <ul><li>The project's primary language is Python</li><li>Installation, usage, and test commands are well-documented, providing clear instructions for setting up and running the project.</li><li>The `LICENSE.txt` file contains the GNU General Public License (GPL) version 3, outlining the terms and conditions for copying, modifying, and distributing the software.</li></ul> |
 | 🔌 | **Integrations**  | <ul><li>The project integrates with language learning models (LLM) from either OpenAI or Google, as seen in `utils/llms.py`.</li><li>It also supports the Tavily search tool for web searching, as seen in `utils/webSearchTool.py`.</li><li>User interface elements are managed using `streamlit`, a Python library for data apps.</li></ul> |
 | 🧩 | **Modularity**    | <ul><li>The project is highly modular, with separate utilities for web searching, question generation, report writing, and more.</li><li>It has a `models` directory that encapsulates data structures for managing the state of research analysis.</li><li>Each utility module has a specific role, enhancing the code's readability and maintainability.</li></ul> |
-
 | ⚡️  | **Performance**   | <ul><li>The App is able to check for valid API keys.</li><li>It is capable of Generating research level answers and cite their sources.</li></ul> |
 
 ---
