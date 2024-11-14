@@ -22,6 +22,7 @@
 
 - [ Overview](#-overview)
 - [ Features](#-features)
+- [ Main Idea](#-main-idea)
 - [ Project Structure](#-project-structure)
   - [ Project Index](#-project-index)
 - [ Getting Started](#-getting-started)
@@ -38,10 +39,63 @@
 
 ##  Overview
 
-The researchAssistantApp.git is an innovative open-source project designed to streamline the research process. It serves as a virtual research assistant, capable of conducting interviews, generating questions, and synthesizing information into comprehensive reports. Key features include AI analyst personas, web search capabilities, and a user-friendly interface. This tool is ideal for researchers, students, and professionals seeking efficient and organized data collection and analysis.
+The researchAssistantApp is an innovative open-source project designed to streamline the research process. It serves as a virtual research assistant, capable of conducting interviews, generating questions, and synthesizing information into comprehensive reports. Key features include AI analyst personas, web search capabilities, and a user-friendly interface. This tool is ideal for researchers, students, and professionals seeking efficient and organized data collection and analysis.
 
 ---
+## Main Idea
 
+- **Purpose**: 
+  - Facilitate comprehensive research on a specific topic from multiple perspectives.
+  - Utilize Interview personas to simulate diverse viewpoints during the research process.
+
+- **User Interaction**:
+  - **Selection of Interview Agents**:
+    - Users can choose the number of Interview agents to engage for their query.
+    - Options range from a single agent to multiple agents, depending on the depth of research desired.
+
+  - **Selection of Interview Rounds**:
+    - Users can choose the max number of rounds to conduct the Interview.
+    - Options range from a single to multiple steps, depending on the depth of research desired.
+  
+  - **Persona Generation**:
+    - The app generates unique personas for each selected agent, reflecting different fields, backgrounds, and expertise.
+    - Users can review and customize the generated personas based on their research needs.
+
+  - **Feedback Mechanism**:
+    - Users can provide feedback to include different interviewers from different fields or backgrounds.
+    - This allows for a more tailored and relevant research experience.
+
+- **Interview Process**:
+  - **Engagement with Expert LLM Agent**:
+    - Once the user is satisfied with the personas, the agents conduct an interview with an expert LLM agent.
+    - The LLM agent has access to web search and Wikipedia search tools to provide accurate and up-to-date information.
+
+  - **Interview Dynamics**:
+    - The interview continues for a predetermined number of turns, as specified by the user at the beginning.
+    - The interview may also conclude earlier if the agents are satisfied with the responses received.
+
+- **Report Compilation**:
+  - **Findings Consolidation**:
+    - After the interviews, the findings from all personas are compiled into a comprehensive report.
+  
+  - **Structured Report Creation**:
+    - Three specialized agents are assigned to write distinct sections of the report:
+      - **Introduction**: Summarizes the research topic and objectives.
+      - **Body**: Presents detailed findings, insights, and perspectives gathered from the interviews.
+      - **Conclusion**: Offers a synthesis of the research findings and potential implications.
+
+- **User Benefits**:
+  - Gain insights from diverse perspectives, enhancing the depth and breadth of research.
+  - Streamlined process for gathering and organizing information efficiently.
+  - Customizable experience tailored to individual research needs and preferences.
+
+- **Future Enhancements**:
+  - Potential integration of additional data sources and research tools.
+  - Continuous improvement of persona generation algorithms for more nuanced perspectives.
+  - User feedback will be actively sought to refine and enhance app functionality.
+
+
+---
 ##  Features
 
 |      | Feature         | Summary       |
