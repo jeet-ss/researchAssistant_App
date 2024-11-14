@@ -109,6 +109,7 @@ The researchAssistantApp is an innovative open-source project designed to stream
 - Continuous improvement of **persona generation algorithms** for more nuanced perspectives.
 - User feedback will be actively sought to **refine and enhance app functionality**.
 
+### 📈 The graph associated with the APP functionality can be seen as follows:
 <p align="center">
     <img src="https://github.com/jeet-ss/researchAssistant_App/blob/main/resources/researchAssistant_graph.jpeg" alt="app graph">
 </p>
