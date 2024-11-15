@@ -136,11 +136,11 @@ if __name__ == "__main__":
             #git.page_link("https://github.com/jeet-ss/researchAssistant_App", label="Github Repository", icon=":material/code_blocks:")
             start_butt.button('Start', on_click=toggle_st, icon=":material/not_started:", type="primary")
         with main_container:
-            st.write(explaination_text_header)
+            st.markdown(explaination_text_header)
             _, git, _ = create_columns(3)
             git.page_link("https://github.com/jeet-ss/researchAssistant_App", label="Github Repository", icon=":material/code_blocks:")
             #st.page_link("https://github.com/jeet-ss/researchAssistant_App", label="Github Repository", icon=":material/code_blocks:")
-            st.write(explaination_text_footer)
+            st.markdown(explaination_text_footer)
             
     else:
         if st.session_state['n'] != 7:
