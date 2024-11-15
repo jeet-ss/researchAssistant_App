@@ -130,7 +130,7 @@ def app_sidebar():
             captions=[
                 '''[Tavily AI API key / Pricing page](https://app.tavily.com/) 
                     Free Limit: 1000 requests per month''',
-                "Rate limit: 60 requests per minute.",
+                "No limits",
             ],
         )
 
