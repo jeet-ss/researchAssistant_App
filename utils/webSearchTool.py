@@ -2,6 +2,8 @@ import streamlit as st
 
 # Web search tool
 from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_community.tools import DuckDuckGoSearchResults
+from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 
 def instantiate_webSearchTool(
     webSearchTool_provider: str, api_key: str, max_results: int
@@ -18,8 +20,13 @@ def instantiate_webSearchTool(
             max_results = max_results,
             search_depth="advanced"
         )
+    elif webSearchTool_provider == "Duck":
+            wrapper = DuckDuckGoSearchAPIWrapper(max_results=max_results)
+            webSearchTool = DuckDuckGoSearchResults(
+                api_wrapper=wrapper,
+                output_format="list"
+            )
     
-
     return webSearchTool
 
 
@@ -30,6 +37,12 @@ def instantiate_webSearchTool_main():
         if st.session_state.webSearchTool_provider == "Tavily" and st.session_state.webSearchTool_api_key.startswith("tvly-"):
             webSearchTool = instantiate_webSearchTool(
                 "Tavily",
+                api_key=st.session_state.webSearchTool_api_key,
+                max_results=st.session_state.max_results,
+            )
+        elif st.session_state.webSearchTool_provider == "Duck":
+            webSearchTool = instantiate_webSearchTool(
+                "Duck",
                 api_key=st.session_state.webSearchTool_api_key,
                 max_results=st.session_state.max_results,
             )

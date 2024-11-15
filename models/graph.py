@@ -12,7 +12,7 @@ from models.states import ResearchGraphState, InterviewState
 
 
 
-def create_ra_graph(llm, webSearchTool):
+def create_ra_graph(llm, webSearchTool, webSearchTool_provider:str):
     ### Create analysts
     # analyst_creator = StateGraph(GenerateAnalystsState)
     # analyst_creator.add_node("create_analysts", create_analysts)
@@ -27,7 +27,8 @@ def create_ra_graph(llm, webSearchTool):
     # Add nodes and edges 
     interview_builder = StateGraph(InterviewState)
     interview_builder.add_node("ask_question", partial(generate_question, llm=llm))
-    interview_builder.add_node("search_web", partial(search_web, llm=llm, webSearchTool=webSearchTool))
+    interview_builder.add_node("search_web", partial(search_web, llm=llm, webSearchTool=webSearchTool, 
+                                                    webSearchTool_provider=webSearchTool_provider))
     interview_builder.add_node("search_wikipedia", partial(search_wikipedia, llm=llm))
     interview_builder.add_node("answer_question", partial(generate_answer, llm=llm))
     interview_builder.add_node("save_interview", save_interview)

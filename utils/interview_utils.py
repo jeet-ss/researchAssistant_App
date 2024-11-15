@@ -29,7 +29,7 @@ def generate_question(state: InterviewState, llm):
     return {"messages": [question]}
 
 
-def search_web(state: InterviewState, llm, webSearchTool):
+def search_web(state: InterviewState, llm, webSearchTool, webSearchTool_provider: str):
     
     """ Retrieve docs from web search """
 
@@ -39,13 +39,23 @@ def search_web(state: InterviewState, llm, webSearchTool):
     # Search
     search_docs = webSearchTool.invoke(search_query.search_query)
 
-     # Format
-    formatted_search_docs = "\n\n---\n\n".join(
-        [
-            f'<Document href="{doc["url"]}"/>\n{doc["content"]}\n</Document>'
-            for doc in search_docs
-        ]
-    )
+    # Format
+    if webSearchTool_provider == "Tavily":
+        formatted_search_docs = "\n\n---\n\n".join(
+            [
+                f'<Document href="{doc["url"]}"/>\n{doc["content"]}\n</Document>'
+                for doc in search_docs
+            ]
+        )
+    elif webSearchTool_provider == "Duck":
+        formatted_search_docs = "\n\n---\n\n".join(
+            [
+                f'<Document href="{doc["link"]}"/>\n{doc["snippet"]}\n</Document>'
+                for doc in search_docs
+            ]
+        )
+    else:
+        formatted_search_docs = []
 
     return {"context": [formatted_search_docs]} 
 

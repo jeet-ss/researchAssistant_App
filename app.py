@@ -12,6 +12,24 @@ from utils.llms import instantiate_LLM_main
 from utils.webSearchTool import instantiate_webSearchTool_main
 
 
+explaination_text_header = """
+### What is it About?
+
+The **Research Assistant App** is an open-source project designed to streamline the research process. It acts as a virtual research assistant, capable of conducting interviews, generating insightful questions, and synthesizing information into comprehensive reports. Users can select and modify various personas and set the maximum number of interviews they wish to conduct.
+
+For more details, visit:
+"""
+explaination_text_footer = """
+#### Key Features:
+- **AI Analyst Personas:** Tailor your research experience with customizable AI personas.
+- **Parallel Web Search Capabilities:** Conduct multiple web searches simultaneously for efficient data gathering.
+- **User-Friendly Interface:** Navigate easily through the app for a seamless research experience.
+
+This tool is ideal for researchers, students, and professionals seeking efficient and organized data collection and analysis. 
+
+"""
+
+
 def refresh_func(container):
     # Clears the contents of the specified container
     container.empty()
@@ -63,14 +81,14 @@ def status_text(node_name):
         return "Conducting Interviews..."
     elif node_name == "write_conclusion":
         return "Writing Conclusion..."
-    elif node_name == "write_introduciton":
+    elif node_name == "write_introduction":
         return "Writing Introduction"
     elif node_name == "write_report":
         return "Writing Report..."
     elif node_name == "finalize_report":
         return "Finalizing Report..."
     else:
-        return ""
+        return None
     
 
 def create_columns(cols: int):
@@ -83,8 +101,8 @@ def create_columns(cols: int):
 
 if __name__ == "__main__":
     # Set up the Streamlit app configuration
-    st.set_page_config(page_title="Research App", page_icon="🚀")
-    st.title("🔎 Research Assistant APP")
+    st.set_page_config(page_title="Research App", page_icon="📖")
+    st.title("📖 Research Assistant APP")
 
     app_sidebar()  # Initialize the sidebar for the app
 
@@ -121,7 +139,7 @@ if __name__ == "__main__":
     thread = {"configurable": {"thread_id": "1"}}
 
     # Streamlit UI components
-    primary_button = st.empty()  # Placeholder for the primary button
+    primary_button = st.container()  # Placeholder for the primary button
     queryDisplay_container = st.container(border=True)  # Container for displaying query info
     slate = st.empty()  # Placeholder for dynamic content
     slate.empty()  # Clear the slate
@@ -130,7 +148,17 @@ if __name__ == "__main__":
 
     # Display Start and Restart button based on the application state
     if st.session_state['st'] == False:
-        primary_button.button('Start', on_click=toggle_st, icon=":material/not_started:", type="primary")
+        with primary_button:
+            git, start_butt, _ = create_columns(3)
+            #git.page_link("https://github.com/jeet-ss/researchAssistant_App", label="Github Repository", icon=":material/code_blocks:")
+            start_butt.button('Start', on_click=toggle_st, icon=":material/not_started:", type="primary")
+        with main_container:
+            st.write(explaination_text_header)
+            _, git, _ = create_columns(3)
+            git.page_link("https://github.com/jeet-ss/researchAssistant_App", label="Github Repository", icon=":material/code_blocks:")
+            #st.page_link("https://github.com/jeet-ss/researchAssistant_App", label="Github Repository", icon=":material/code_blocks:")
+            st.write(explaination_text_footer)
+            
     else:
         if st.session_state['n'] != 7:
             primary_button.button('Re-Start', on_click=toggle_st, icon=":material/restart_alt:")
@@ -139,13 +167,15 @@ if __name__ == "__main__":
     if st.session_state["st"] == True:
         
         if st.session_state['n'] == 0:
+            if st.session_state.webSearchTool_provider == "Duck":
+                st.session_state.webSearchTool_api_key = ""
             # Initial session: Load API keys and create the LLM and web search tool
             if st.session_state.model_api_key is not None and st.session_state.webSearchTool_api_key is not None:
                 model = instantiate_LLM_main()  # Instantiate the language model
                 webSearchTool = instantiate_webSearchTool_main()  # Instantiate the web search tool
                 # Generate the graph at the start of the app
                 if model is not None and webSearchTool is not None:
-                    st.session_state.graph = create_ra_graph(llm=model, webSearchTool=webSearchTool) 
+                    st.session_state.graph = create_ra_graph(llm=model, webSearchTool=webSearchTool, webSearchTool_provider=st.session_state.webSearchTool_provider) 
                     set_ss(['n'], [1])  # Move to the next state
                 else:
                     st.info("Provide the Correct API Keys and Press Enter or Click Continue")
@@ -248,7 +278,9 @@ if __name__ == "__main__":
                             # Print the name of the next node for information
                             node_name = next(iter(event.keys()))
                             print("--Node_name : ", node_name)
-                            st.write(status_text(node_name))
+                            msg = status_text(node_name)
+                            if msg is not None: 
+                                st.write(msg)
                         
                         # Obtain the final report
                         final_state = st.session_state.graph.get_state(thread)

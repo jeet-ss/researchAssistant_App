@@ -3,7 +3,7 @@ import streamlit as st
 
 list_LLM_providers = [":rainbow[**OpenAI**]"]#, "**Google Generative AI**"]
 
-list_WebSearch_providers = [":rainbow[**Tavily**]"]
+list_WebSearch_providers = [":rainbow[**Tavily**]", "**DuckDuckGo**"]
 
 def expander_model_parameters(
     LLM_provider="OpenAI",
@@ -89,7 +89,7 @@ def app_sidebar():
     with st.sidebar:
 
         st.caption(
-            "🚀 An App powered by 🔗 Langchain"
+            "🚀 An App powered by 🔗 LangGraph"
         )
         st.divider()
 
@@ -137,6 +137,16 @@ def app_sidebar():
         if web_search_tool_chooser == list_WebSearch_providers[0]:
             expander_websearch_parameters(
                 webSearchTool_provider="Tavily",
+                text_input_API_key="Tavily API Key - [Get an API key](https://platform.openai.com/account/api-keys)",
+                #list_models = ["gpt-4o-mini", "gpt-4o", "gpt-4-turbo-preview"],
+                #tavily_api_key = 
+                #openai_api_key=openai_api_key,
+                #api_key=openai_api_key,
+            )
+        
+        elif web_search_tool_chooser == list_WebSearch_providers[1]:
+            expander_websearch_parameters(
+                webSearchTool_provider="Duck",
                 text_input_API_key="Tavily API Key - [Get an API key](https://platform.openai.com/account/api-keys)",
                 #list_models = ["gpt-4o-mini", "gpt-4o", "gpt-4-turbo-preview"],
                 #tavily_api_key = 
