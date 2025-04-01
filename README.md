@@ -20,6 +20,9 @@
 <p align="center">
     <!-- default option, no dependency badges. -->
 </p>
+<p align="center">
+	🎲 A demo version of the app is hosted here: https://researchassistant-jss.streamlit.app/.
+</p>
 <br>
 
 ##  Table of Contents
